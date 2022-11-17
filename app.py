@@ -15,7 +15,7 @@ def hello_world():  # put application's code here
 def getMedicineName():
     if request.method == 'POST':
         directory_path = 'images/'
-        medicine_images = request.files.getlist('files')
+        medicine_images = request.files.getlist('file')
         logging.debug(medicine_images)
         merged_file_name = medicine_images[0].filename
         logging.debug(merged_file_name)
