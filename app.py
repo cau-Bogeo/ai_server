@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 from model.AI_model import AI
+import logging
 
+logging.basicConfig(filename = "logs/test.log", level = logging.ERROR)
 app = Flask(__name__)
 
 
@@ -15,7 +17,9 @@ def getMedicineName():
     if request.method == 'POST':
         directory_path = 'images/'
         medicine_images = request.files.getlist('files')
+        logging.debug(medicine_images)
         merged_file_name = medicine_images[0].filename
+        logging.debug(merged_file_name)
         image_name = []
         for image in medicine_images:
             file_name = secure_filename(directory_path + image.filename)
