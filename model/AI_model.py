@@ -37,7 +37,7 @@ class AI:
 
     def test(self, img_dir):
         class_list = ['포타리온정', '포타리온정2', '포타리온정3', '포타리온정4']
-        model = tf.keras.models.load_model('~/ai_server/model/Pill_image_model_2_fix_4.h5')
+        model = tf.keras.models.load_model('/home/ubuntu/ai_server/model/Pill_image_model_2_fix_4.h5')
         image = Image.open(img_dir)
         image = image.resize((224, 224))
         image = np.array(image)
