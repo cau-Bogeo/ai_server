@@ -32,12 +32,12 @@ class AI:
         new_image = Image.new('RGB', (2 * image1_size[0], image1_size[1]), (250, 250, 250))
         new_image.paste(deg_image1, (0, 0))
         new_image.paste(deg_image2, (image1_size[0], 0))
-        new_image.save(file_name+"merged_image.jpg", "JPEG")
+        new_image.save(file_name[:-5]+"merged_image.jpg", "JPEG")
         # new_image.show()
 
     def test(self, img_dir):
         class_list = ['포타리온정', '포타리온정2', '포타리온정3', '포타리온정4']
-        model = tf.keras.models.load_model('./Pill_image_model_2_fix_4.h5')
+        model = tf.keras.models.load_model('~/ai_server/model/Pill_image_model_2_fix_4.h5')
         image = Image.open(img_dir)
         image = image.resize((224, 224))
         image = np.array(image)
