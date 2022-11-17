@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from werkzeug.utils import secure_filename
 from model.AI_model import AI
 import logging
@@ -28,7 +28,7 @@ def getMedicineName():
         ai_model = AI()
         ai_model.combination(image_name[0], image_name[1], merged_file_name)
         result = ai_model.test(merged_file_name + "merged_image.jpg")
-        return {'result' : "%s" % result}
+        return jsonify({"result": result})
 
 
 if __name__ == '__main__':
