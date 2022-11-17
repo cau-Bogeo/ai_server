@@ -17,7 +17,7 @@ def getMedicineName():
         directory_path = 'images/'
         medicine_images = request.files.getlist('imageFileList')
         logging.debug(medicine_images)
-        merged_file_name = medicine_images[0].filename
+        merged_file_name = medicine_images[0].filename[:-5]
         logging.debug(merged_file_name)
         image_name = []
         for image in medicine_images:
@@ -27,7 +27,7 @@ def getMedicineName():
         print(image_name)
         ai_model = AI()
         ai_model.combination(image_name[0], image_name[1], merged_file_name)
-        result = ai_model.test(merged_file_name[:-5] + ".merged_image.jpg")
+        result = ai_model.test(merged_file_name + ".merged_image.jpg")
         return {'result' : "%s" % result}
 
 
