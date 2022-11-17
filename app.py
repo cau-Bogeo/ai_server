@@ -27,7 +27,7 @@ def getMedicineName():
         print(image_name)
         ai_model = AI()
         ai_model.combination(image_name[0], image_name[1], merged_file_name)
-        result = ai_model.test(merged_file_name + ".merged_image.jpg")
+        result = ai_model.test(merged_file_name + "merged_image.jpg")
         return {'result' : "%s" % result}
 
 
