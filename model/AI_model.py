@@ -12,7 +12,7 @@ import re
 
 
 class AI:
-    def combination(self, img_dir1, img_dir2, file_name):
+    def combination(self, img_dir1, img_dir2):
         image1 = Image.open(img_dir1)
         image2 = Image.open(img_dir2)
         w1, h1 = image1.size
@@ -32,7 +32,7 @@ class AI:
         new_image = Image.new('RGB', (2 * image1_size[0], image1_size[1]), (250, 250, 250))
         new_image.paste(deg_image1, (0, 0))
         new_image.paste(deg_image2, (image1_size[0], 0))
-        new_image.save(file_name[:-5]+"merged_image.jpg", "JPEG")
+        new_image.save("merged_image.jpg", "JPEG")
         # new_image.show()
 
     def test(self, img_dir):

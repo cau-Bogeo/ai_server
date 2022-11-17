@@ -26,8 +26,8 @@ def getMedicineName():
             image.save(file_name)
         print(image_name)
         ai_model = AI()
-        ai_model.combination(image_name[0], image_name[1], merged_file_name)
-        result = ai_model.test(merged_file_name + "merged_image.jpg")
+        ai_model.combination(image_name[0], image_name[1])
+        result = ai_model.test("merged_image.jpg")
         return jsonify({"result": result})
 
 
