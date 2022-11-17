@@ -3,7 +3,6 @@ from werkzeug.utils import secure_filename
 from model.AI_model import AI
 import logging
 
-logging.basicConfig(filename = "logs/test.log", level = logging.ERROR)
 app = Flask(__name__)
 
 
