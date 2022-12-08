@@ -7,7 +7,7 @@ import re
 
 
 class AI:
-    def combination(img_dir1, img_dir2):
+    def combination(self, img_dir1, img_dir2):
         image1 = Image.open(img_dir1)
         image2 = Image.open(img_dir2)
         w1, h1 = image1.size
