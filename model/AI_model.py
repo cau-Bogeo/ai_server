@@ -32,7 +32,7 @@ class AI:
 
     def test(self, img_dir):
         class_list2 = []
-        data = pd.read_csv('./data.csv', encoding='cp949')
+        data = pd.read_csv('/home/ubuntu/ai_server/model/data.csv', encoding='cp949')
         image_url = pd.DataFrame(data['품목명'])
         for i, row in image_url.iterrows():
             class_list2.append(row['품목명'])
