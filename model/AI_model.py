@@ -27,7 +27,7 @@ class AI:
         new_image = Image.new('RGB', (2 * image1_size[0], image1_size[1]), (250, 250, 250))
         new_image.paste(deg_image1, (0, 0))
         new_image.paste(deg_image2, (image1_size[0], 0))
-        new_image.save("merged_image16.jpg", "JPEG")
+        new_image.save("merged_image.jpg", "JPEG")
         # new_image.show()
 
     def test(self, img_dir):
