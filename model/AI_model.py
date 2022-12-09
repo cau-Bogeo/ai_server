@@ -30,7 +30,7 @@ class AI:
         new_image.save("merged_image16.jpg", "JPEG")
         # new_image.show()
 
-    def test(img_dir):
+    def test(self, img_dir):
         class_list2 = []
         data = pd.read_csv('./data.csv', encoding='cp949')
         image_url = pd.DataFrame(data['품목명'])
